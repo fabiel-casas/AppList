@@ -23,23 +23,6 @@ public class ItunesServiceManager {
     this.itunesService = ItunesService.getInstance();
   }
 
-  public void getListOfApp(AppListListener listener){
-    this.appListListener = listener;
-    itunesService.rxRequestAppsList(new Callback<ItunesRes>() {
-      @Override
-      public void success(ItunesRes itunesRes, Response response) {
-        if(appListListener != null){
-          appListListener.OnAppListReady(itunesRes.getFeed().getEntry());
-        }
-      }
-
-      @Override
-      public void failure(RetrofitError error) {
-
-      }
-    });
-  }
-
   public Observable<ItunesRes> getListOfApp(){
     return itunesService.rxRequestAppsList()
         .subscribeOn(Schedulers.newThread())

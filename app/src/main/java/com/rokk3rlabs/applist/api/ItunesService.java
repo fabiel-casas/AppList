@@ -34,10 +34,6 @@ public class ItunesService {
     return new ItunesService(restAdapter.create(ItunesApi.class));
   }
 
-  public void rxRequestAppsList(Callback<ItunesRes> callback){
-    itunesApi.requestAppsList(COUNTRY_US, TYPE_CALL, LIMIT_NUM, TYPE_RESPONSE, callback);
-  }
-
   public Observable<ItunesRes> rxRequestAppsList(){
     return itunesApi.requestAppsList(COUNTRY_US, TYPE_CALL, LIMIT_NUM, TYPE_RESPONSE);
   }
