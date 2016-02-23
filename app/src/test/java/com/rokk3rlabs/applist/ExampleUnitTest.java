@@ -1,4 +1,4 @@
-package com.rokk3rlabs.applist;
+package com.fabiel.applist;
 
 import org.junit.Test;
 

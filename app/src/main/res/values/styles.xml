@@ -6,6 +6,21 @@
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>
+    <item name="android:windowActionBarOverlay">true</item>
   </style>
+  <!-- No action bar-->
+  <style name="AppTheme.NoActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+  </style>
+  <!-- No action bar my stile-->
+  <style name="AppTheme.NoActionBar.Style" parent="AppTheme">
+    <item name="actionBarStyle">@style/ActionBar.Solid.AppList.NoTitle</item>
+  </style>
+  <style name="ActionBar.Solid.AppList.NoTitle" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+    <item name="displayOptions">useLogo|showHome</item>
+  </style>
+  <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+  <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
 </resources>
