@@ -1,4 +1,4 @@
-package com.fabiel.applist.modules;
+package com.fabiel.applist.modules.main;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
