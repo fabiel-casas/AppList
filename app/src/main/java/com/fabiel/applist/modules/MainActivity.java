@@ -28,6 +28,11 @@ public class MainActivity extends AppCompatActivity implements CategoryFragment.
         bundle.putString(CategoryFragment.CATEGORY_ID, categoryId);
         getFragmentManager()
             .beginTransaction()
+            .setCustomAnimations(
+                R.animator.card_flip_right_in,
+                R.animator.card_flip_right_out,
+                R.animator.card_flip_left_in,
+                R.animator.card_flip_left_out)
             .replace(R.id.frameLayoutContainer, AppGalleryFragment.newInstance(bundle), null)
             .commit();
       }
@@ -52,12 +57,18 @@ public class MainActivity extends AppCompatActivity implements CategoryFragment.
       bundle.putString(CategoryFragment.CATEGORY_ID, categoryId);
       getFragmentManager()
           .beginTransaction()
+          .setCustomAnimations(
+              R.animator.card_flip_right_in,
+              R.animator.card_flip_right_out,
+              R.animator.card_flip_left_in,
+              R.animator.card_flip_left_out)
           .replace(R.id.frameLayoutContainer, AppGalleryFragment.newInstance(bundle), null)
           .commit();
     } else {
       Intent intent = new Intent(getApplicationContext(), AppsListActivity.class);
       intent.putExtra(CategoryFragment.CATEGORY_ID, categoryId);
       startActivity(intent);
+      overridePendingTransition(R.anim.right_in, R.anim.left_out);
     }
   }
 }

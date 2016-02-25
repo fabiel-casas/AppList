@@ -70,6 +70,12 @@ public class AppGalleryFragment extends Fragment {
     return rootView;
   }
 
+  @Override
+  public void onResume() {
+    super.onResume();
+    gridLayoutGallery.setBackgroundResource(android.R.color.black);
+  }
+
   private void populateAdapter() {
     GalleryAdapter galleryAdapter = new GalleryAdapter(getActivity(), appList);
     gridLayoutGallery.setAdapter(galleryAdapter);
@@ -80,6 +86,7 @@ public class AppGalleryFragment extends Fragment {
         Intent intent = new Intent(getActivity(), AppDetailActivity.class);
         intent.putExtra(AppsListFragment.APPITEM_ID, appItem.getId());
         startActivity(intent);
+        getActivity().overridePendingTransition(R.anim.right_in, R.anim.left_out);
       }
     });
   }
